@@ -1,0 +1,2 @@
+class Moba < ApplicationRecord
+end

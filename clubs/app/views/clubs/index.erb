@@ -1,0 +1,22 @@
+<h1>Listing clubs</h1>
+ <%= link_to 'New club', new_club_path %>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+    <th colspan="2"></th>
+  </tr>
+ 
+  <% @club.each do |club| %>
+    <tr>
+      <td><%= club.title %></td>
+      <td><%= club.date %></td>
+      <td><%= link_to 'Show', club_path(club) %></td>
+      <td><%= link_to 'Edit', edit_club_path(club) %></td>
+      <td><%= link_to 'Destroy', club_path(club),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+      </td>
+    </tr>
+  <% end %>
+</table>

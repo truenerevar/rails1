@@ -1,0 +1,11 @@
+<p>
+  <strong>Title:</strong>
+  <%= @plane.title %>
+</p>
+ 
+<p>
+  <strong>Text:</strong>
+  <%= @plane.text %>
+</p>
+<%= link_to 'Edit', edit_plane_path(@plane) %> |
+<%= link_to 'Back', planes_path %>

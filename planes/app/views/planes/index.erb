@@ -1,0 +1,22 @@
+<h1>Listing planes</h1>
+ <%= link_to 'New plane', new_plane_path %>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+    <th colspan="2"></th>
+  </tr>
+ 
+  <% @plane.each do |plane| %>
+    <tr>
+      <td><%= plane.title %></td>
+      <td><%= plane.text %></td>
+      <td><%= link_to 'Show', plane_path(plane) %></td>
+      <td><%= link_to 'Edit', edit_plane_path(plane) %></td>
+      <td><%= link_to 'Destroy', plane_path(plane),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+      </td>
+    </tr>
+  <% end %>
+</table>

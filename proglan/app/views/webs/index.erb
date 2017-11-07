@@ -1,0 +1,22 @@
+<h1>Listing webs</h1>
+ <%= link_to 'New web', new_web_path %>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+    <th colspan="2"></th>
+  </tr>
+ 
+  <% @web.each do |web| %>
+    <tr>
+      <td><%= web.title %></td>
+      <td><%= web.text %></td>
+      <td><%= link_to 'Show', web_path(web) %></td>
+      <td><%= link_to 'Edit', edit_web_path(web) %></td>
+      <td><%= link_to 'Destroy', web_path(web),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+      </td>
+    </tr>
+  <% end %>
+</table>

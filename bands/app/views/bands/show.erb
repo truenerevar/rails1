@@ -1,0 +1,11 @@
+<p>
+  <strong>Title:</strong>
+  <%= @band.title %>
+</p>
+ 
+<p>
+  <strong>Text:</strong>
+  <%= @band.text %>
+</p>
+<%= link_to 'Edit', edit_band_path(@band) %> |
+<%= link_to 'Back', bands_path %>

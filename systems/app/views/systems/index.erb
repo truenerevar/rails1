@@ -1,0 +1,22 @@
+<h1>Listing systems</h1>
+ <%= link_to 'New system', new_system_path %>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+    <th colspan="2"></th>
+  </tr>
+ 
+  <% @system.each do |system| %>
+    <tr>
+      <td><%= system.title %></td>
+      <td><%= system.text %></td>
+      <td><%= link_to 'Show', system_path(system) %></td>
+      <td><%= link_to 'Edit', edit_system_path(system) %></td>
+      <td><%= link_to 'Destroy', system_path(system),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+      </td>
+    </tr>
+  <% end %>
+</table>
